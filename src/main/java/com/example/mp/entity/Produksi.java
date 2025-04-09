@@ -3,9 +3,13 @@ package com.example.mp.entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "produksi")
 public class Produksi {
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
 
     @EmbeddedId
     private ProduksiId id;
