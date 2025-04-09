@@ -107,7 +107,7 @@ After starting the application:
 
 ## 👥 Contributors
 
-- [Marfin] – Initial development
+- Marfin
 
 Feel free to contribute by submitting pull requests or issues!
 
