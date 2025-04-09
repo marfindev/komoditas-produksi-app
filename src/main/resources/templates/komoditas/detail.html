@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detail Komoditas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Detail Komoditas</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Kode</th>
+            <td th:text="${komoditas.kode}">K001</td>
+        </tr>
+        <tr>
+            <th>Nama</th>
+            <td th:text="${komoditas.nama}">Nama</td>
+        </tr>
+    </table>
+    <a th:href="@{/komoditas}" class="btn btn-primary">Kembali</a>
+</div>
+</body>
+</html>

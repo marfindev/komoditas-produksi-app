@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detail Produksi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Detail Produksi</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Tanggal</th>
+            <td th:text="${produksi.id.tanggal}">2022-01-01</td>
+        </tr>
+        <tr>
+            <th>Kode Komoditas</th>
+            <td th:text="${produksi.id.komoditasKode}">K001</td>
+        </tr>
+        <tr>
+            <th>Produksi</th>
+            <td th:text="${produksi.produksi}">1000</td>
+        </tr>
+    </table>
+    <a th:href="@{/produksi}" class="btn btn-primary">Kembali</a>
+</div>
+</body>
+</html>

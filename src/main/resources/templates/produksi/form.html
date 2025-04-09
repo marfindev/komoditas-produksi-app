@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form Produksi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Form Produksi</h1>
+    <form th:action="@{/produksi/save}" th:object="${produksi}" method="post">
+        <div class="form-group">
+            <label>Tanggal</label>
+            <input type="date" th:field="*{id.tanggal}" class="form-control" required/>
+            <div th:if="${#fields.hasErrors('id.tanggal')}" class="alert alert-danger" th:errors="*{id.tanggal}"></div>
+        </div>
+        <div class="form-group">
+            <label>Komoditas</label>
+            <select th:field="*{id.komoditasKode}" class="form-control" required>
+                <option value="" disabled selected>Pilih Komoditas</option>
+                <option th:each="k : ${komoditasList}" th:value="${k.kode}" th:text="${k.nama}"></option>
+            </select>
+            <div th:if="${#fields.hasErrors('id.komoditasKode')}" class="alert alert-danger" th:errors="*{id.komoditasKode}"></div>
+        </div>
+        <div class="form-group">
+            <label>Produksi</label>
+            <input type="number" th:field="*{produksi}" class="form-control" required/>
+            <div th:if="${#fields.hasErrors('produksi')}" class="alert alert-danger" th:errors="*{produksi}"></div>
+        </div>
+        <button type="submit" class="btn btn-success">Simpan</button>
+    </form>
+</div>
+</body>
+</html>

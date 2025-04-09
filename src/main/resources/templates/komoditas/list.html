@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Daftar Komoditas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Daftar Komoditas</h1>
+    <a th:href="@{/komoditas/add}" class="btn btn-primary mb-3">Tambah Komoditas</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Kode</th>
+                <th>Nama</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="k : ${list}">
+                <td th:text="${k.kode}">K001</td>
+                <td th:text="${k.nama}">Nama</td>
+                <td>
+                    <a th:href="@{'/komoditas/detail/' + ${k.kode}}" class="btn btn-info">Detail</a>
+                    <a th:href="@{'/komoditas/edit/' + ${k.kode}}" class="btn btn-warning">Edit</a>
+                    <a th:href="@{'/komoditas/delete/' + ${k.kode}}"
+                       onclick="return confirm('Data Akan Dihapus, apakah Anda yakin?');"
+                       class="btn btn-danger">Hapus</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

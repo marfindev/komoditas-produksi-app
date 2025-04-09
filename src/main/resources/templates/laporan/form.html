@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Laporan Produksi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Laporan Produksi</h1>
+    <form th:action="@{/laporan}" method="post">
+        <div class="form-group">
+            <label>Tahun</label>
+            <input type="number" name="tahun" class="form-control" required/>
+        </div>
+        <button type="submit" class="btn btn-primary">Generate Report</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Daftar Produksi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Daftar Produksi</h1>
+    <a th:href="@{/produksi/add}" class="btn btn-primary mb-3">Tambah Produksi</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th>Kode Komoditas</th>
+                <th>Produksi</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="p : ${list}">
+                <td th:text="${p.id.tanggal}">2022-01-01</td>
+                <td th:text="${p.id.komoditasKode}">K001</td>
+                <td th:text="${p.produksi}">1000</td>
+                <td>
+                    <a th:href="@{'/produksi/detail?(tanggal=${p.id.tanggal},komoditasKode=${p.id.komoditasKode})}" class="btn btn-info">Detail</a>
+                    <a th:href="@{'/produksi/edit?(tanggal=${p.id.tanggal},komoditasKode=${p.id.komoditasKode})}" class="btn btn-warning">Edit</a>
+                    <a th:href="@{'/produksi/delete?(tanggal=${p.id.tanggal},komoditasKode=${p.id.komoditasKode})}"
+                       onclick="return confirm('Data Akan Dihapus, apakah Anda yakin?');" class="btn btn-danger">Hapus</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

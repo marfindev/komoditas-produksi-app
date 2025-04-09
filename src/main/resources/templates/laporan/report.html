@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hasil Laporan Produksi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Laporan Produksi Tahun <span th:text="${tahun}">2022</span></h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Bulan</th>
+                <th>Total Produksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="row : ${reportData}">
+                <td th:text="${row[0]}">Bulan</td>
+                <td th:text="${row[1]}">Total</td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/laporan}" class="btn btn-primary">Kembali</a>
+</div>
+</body>
+</html>
